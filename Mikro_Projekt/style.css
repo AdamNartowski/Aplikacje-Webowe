@@ -1,0 +1,210 @@
+html {
+  height: 100vh;
+  scroll-behavior: smooth;
+}
+
+body {
+  height: 100vh;
+  margin: 0;
+  background-color: #e8dfca;
+}
+
+* {
+  box-sizing: border-box;
+  max-width: 100%;
+}
+
+.main-container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+}
+
+.nav-links {
+  display: flex;
+  justify-content: center;
+  list-style-type: none;
+  flex-wrap: wrap;
+}
+
+.nav-links li {
+  margin: 10px;
+}
+
+.nav-links a:hover {
+  color: #1a4d2e;
+  text-shadow: 1px 1px 20px #1a4d2e;
+  transform: scale(1.1);
+  z-index: 10;
+}
+
+.nav-links a {
+  color: #1a4d2e;
+  font-family: Papyrus, fantasy;
+  text-decoration: none;
+  display: inline-block;
+  transition: transform 0.25s ease, color 0.25s ease, text-shadow 0.25s ease;
+  transform-origin: center;
+  position: relative;
+  z-index: 1;
+}
+
+h1 {
+  font-family: Papyrus, fantasy;
+}
+
+nav {
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  border-radius: 20px;
+  width: 100%;
+  padding: 10px;
+  justify-content: space-around;
+  align-items: center;
+  align-self: flex-start;
+  backdrop-filter: blur;
+  background-color: #f5efe6;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  background: rgba(245, 239, 230, 0.8);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  color: #1a4d2e;
+  z-index: 1000;
+}
+
+nav img {
+  width: 100px;
+  height: 100px;
+}
+
+footer {
+  display: flex;
+  justify-content: right;
+  background-color: #1a4d2e;
+  color: #f5efe6;
+  width: 100%;
+  padding: 20px;
+  font-family: Papyrus, fantasy;
+}
+
+#obrazek1 {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: auto;
+}
+
+#obrazek1 img {
+  width: 90%;
+  height: auto;
+  object-fit: contain;
+  transition: transform 0.5s ease;
+}
+
+#obrazek1::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0);
+  transition: background 0.3s ease;
+  pointer-events: none;
+  z-index: 2;
+}
+
+#obrazek1:hover::after {
+  background: rgba(0, 0, 0, 0.25);
+}
+
+#napis1 {
+  position: static;
+  width: 90%;
+  background: #4f6f52;
+  color: #f5efe6;
+  text-align: center;
+  padding: 10px 0;
+  margin-top: 10px;
+  transition: none;
+}
+
+#napis1 h2,
+#napis1 p {
+  position: relative;
+  z-index: 3;
+}
+
+#scroll-button {
+  margin-top: 15px;
+  font-size: 2em;
+  background: none;
+  border: none;
+  color: #f5efe6;
+  cursor: pointer;
+  transition: transform 0.3s;
+  position: relative;
+  z-index: 3;
+  text-decoration: none;
+}
+
+#cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  width: 90%;
+  max-width: 1000px;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.card {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  background: white;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.card .face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transition: 0.5s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card .face1 {
+  padding: 20px;
+  box-sizing: border-box;
+  background-color: #4f6f52;
+  color: #f5efe6;
+}
+
+.card .face2 {
+  background: #1a4d2e;
+  color: #e8dfca;
+}
+
+.card:hover .face2 {
+  height: 60px;
+  bottom: 0;
+}
+
+.card .face2 h2 {
+  margin: 0;
+  font-size: 5em;
+  transition: 0.5s;
+}
+
+.card:hover .face2 h2 {
+  font-size: 1.5em;
+}
