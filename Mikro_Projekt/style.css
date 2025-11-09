@@ -1,12 +1,16 @@
 html {
-  height: 100vh;
+  height: auto;
+  max-height: 100vh;
   scroll-behavior: smooth;
 }
 
 body {
-  height: 100vh;
+  height: auto;
+  max-height: 100vh;
   margin: 0;
   background-color: #e8dfca;
+  padding-top: 20vh;
+  font-family: "Story Script", sans-serif;
 }
 
 * {
@@ -18,8 +22,14 @@ body {
   height: 100%;
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 2%;
   align-items: center;
+}
+
+.story-script-regular {
+  font-family: "Story Script", sans-serif;
+  font-weight: 400;
+  font-style: normal;
 }
 
 .nav-links {
@@ -30,29 +40,24 @@ body {
 }
 
 .nav-links li {
-  margin: 10px;
+  margin: 5%;
 }
 
 .nav-links a:hover {
   color: #1a4d2e;
-  text-shadow: 1px 1px 20px #1a4d2e;
+  text-shadow: 0.07em 0.07em 1.25em #1a4d2e;
   transform: scale(1.1);
   z-index: 10;
 }
 
 .nav-links a {
   color: #1a4d2e;
-  font-family: Papyrus, fantasy;
   text-decoration: none;
-  display: inline-block;
   transition: transform 0.25s ease, color 0.25s ease, text-shadow 0.25s ease;
   transform-origin: center;
   position: relative;
   z-index: 1;
-}
-
-h1 {
-  font-family: Papyrus, fantasy;
+  font-size: 3vh;
 }
 
 nav {
@@ -60,15 +65,16 @@ nav {
   position: fixed;
   top: 0;
   left: 0;
-  border-radius: 20px;
+  border-radius: 1.25em;
   width: 100%;
-  padding: 10px;
+  height: 20vh;
+  padding: 0.05em;
   justify-content: space-around;
   align-items: center;
   align-self: flex-start;
   backdrop-filter: blur;
   background-color: #f5efe6;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0.1em 1.5em rgba(0, 0, 0, 0.1);
   background: rgba(245, 239, 230, 0.8);
   backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(5px);
@@ -77,8 +83,8 @@ nav {
 }
 
 nav img {
-  width: 100px;
-  height: 100px;
+  height: 100%;
+  width: auto;
 }
 
 footer {
@@ -87,88 +93,29 @@ footer {
   background-color: #1a4d2e;
   color: #f5efe6;
   width: 100%;
-  padding: 20px;
-  font-family: Papyrus, fantasy;
-}
-
-#obrazek1 {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-  height: auto;
-}
-
-#obrazek1 img {
-  width: 90%;
-  height: auto;
-  object-fit: contain;
-  transition: transform 0.5s ease;
-}
-
-#obrazek1::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0);
-  transition: background 0.3s ease;
-  pointer-events: none;
-  z-index: 2;
-}
-
-#obrazek1:hover::after {
-  background: rgba(0, 0, 0, 0.25);
-}
-
-#napis1 {
-  position: static;
-  width: 90%;
-  background: #4f6f52;
-  color: #f5efe6;
-  text-align: center;
-  padding: 10px 0;
-  margin-top: 10px;
-  transition: none;
-}
-
-#napis1 h2,
-#napis1 p {
-  position: relative;
-  z-index: 3;
-}
-
-#scroll-button {
-  margin-top: 15px;
-  font-size: 2em;
-  background: none;
-  border: none;
-  color: #f5efe6;
-  cursor: pointer;
-  transition: transform 0.3s;
-  position: relative;
-  z-index: 3;
-  text-decoration: none;
+  padding: 1em;
+  font-size: 1.2rem;
 }
 
 #cards {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 20px;
+  gap: 1.5em;
   width: 90%;
   max-width: 1000px;
-  padding: 20px;
+  padding: 1.5em;
   box-sizing: border-box;
 }
 
 .card {
   position: relative;
-  width: 300px;
-  height: 300px;
+  width: 100%;
+  max-width: 300px;
+  aspect-ratio: 1 / 1;
   background: white;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-  border-radius: 10px;
+  border-radius: 1.25em;
   overflow: hidden;
 }
 
@@ -176,35 +123,292 @@ footer {
   position: absolute;
   width: 100%;
   height: 100%;
-  transition: 0.5s;
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: 0.5s;
 }
 
 .card .face1 {
-  padding: 20px;
-  box-sizing: border-box;
   background-color: #4f6f52;
   color: #f5efe6;
+  padding: 1.5em;
+  box-sizing: border-box;
+  z-index: 1;
 }
 
 .card .face2 {
   background: #1a4d2e;
   color: #e8dfca;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  transform-origin: bottom;
+  transform: scaleY(1);
+  transition: transform 1s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 2;
 }
 
 .card:hover .face2 {
-  height: 60px;
-  bottom: 0;
+  transform: scaleY(0.2);
 }
 
 .card .face2 h2 {
   margin: 0;
-  font-size: 5em;
+  font-size: 2em;
   transition: 0.5s;
 }
 
-.card:hover .face2 h2 {
-  font-size: 1.5em;
+#gallery {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 5%;
+  padding: 2%;
+  gap: 1em;
+}
+
+.gallery-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+}
+
+.images {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 2em;
+}
+
+#places-images {
+  display: none;
+}
+
+#animals-images {
+  display: none;
+}
+
+#plants-images {
+  display: none;
+}
+
+#culture-images {
+  display: none;
+}
+
+.gallery-img {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  max-height: 200px;
+  transition: transform 0.3s;
+  border: 0.5vw solid #1a4d2e;
+  border-radius: 20%;
+}
+
+.gallery-img:hover {
+  transform: scale(1.2);
+}
+
+button {
+  color: #f5efe6;
+  background-color: #4f6f52;
+  border: 0.4vw solid #1a4d2e;
+  border-radius: 1.25em;
+  padding: 1.5vw;
+  transition: transform 0.3s, background-color 0.3s;
+  font-family: inherit;
+}
+
+button:hover {
+  transform: scale(1.2);
+  background-color: #1a4d2e;
+}
+
+.img-info {
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+  align-items: center;
+  gap: 1.5em;
+}
+.img-info h2 {
+  color: #f5efe6;
+}
+
+.info {
+  width: 100%;
+  max-width: 250px;
+  border: 0.25em solid #1a4d2e;
+  border-radius: 0.7em 0.25em 0.7em 0.25em;
+  background: #4f6f52;
+  color: #f5efe6;
+  padding: 0.5em;
+}
+
+#wet-info {
+  display: none;
+}
+
+#wet-img:hover ~ #wet-info {
+  display: flex;
+  justify-content: center;
+}
+
+#car-info {
+  display: none;
+}
+
+#car-img:hover ~ #car-info {
+  display: flex;
+  justify-content: center;
+}
+
+#sol-info {
+  display: none;
+}
+
+#sol-img:hover ~ #sol-info {
+  display: flex;
+  justify-content: center;
+}
+
+#tar-info {
+  display: none;
+}
+
+#tar-img:hover ~ #tar-info {
+  display: flex;
+  justify-content: center;
+}
+
+#zub-info {
+  display: none;
+}
+
+#zub-img:hover ~ #zub-info {
+  display: flex;
+  justify-content: center;
+}
+
+#rys-info {
+  display: none;
+}
+
+#rys-img:hover ~ #rys-info {
+  display: flex;
+  justify-content: center;
+}
+
+#video-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+video {
+  width: auto;
+  height: 80vh;
+  border: 0.5vw solid #1a4d2e;
+  border-radius: 1.25em;
+}
+
+#form-section {
+  background-image: url(https://s30.flog.pl/media/foto/14138290_bieszczadzki-drogowskaz-.jpg);
+  background-size: cover;
+  width: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 1.25em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+form {
+  background-color: #4f6f52;
+  padding: 3% 7%;
+  border-radius: 1.25em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1em;
+  max-width: 600px;
+  width: 100%;
+  border: 0.25em solid #1a4d2e;
+}
+
+form h2 {
+  color: #f5efe6;
+  text-align: center;
+}
+
+form label {
+  background-color: #1a4d2e;
+  color: #e8dfca;
+  border-radius: 1.25em;
+  padding: 3%;
+  display: flex;
+  justify-content: center;
+}
+
+#clock {
+  font-family: monospace;
+  font-size: 4vh;
+  display: flex;
+  justify-content: center;
+}
+
+nav h1 {
+  font-size: 5vh;
+}
+
+#home-header {
+  height: 90vh;
+  width: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-image: url(https://cdn.cmc-gallery.pl/static/files/gallery/547/915741_87050.jpg);
+  width: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+#home-header h1,
+#home-header p {
+  background-color: #4f6f52;
+  color: #f5efe6;
+  border: 0.5vw solid #1a4d2e;
+  padding: 0.25em;
+  border-radius: 0.5em;
+}
+
+input,
+select,
+textarea {
+  border: 0.5vw solid #1a4d2e;
+  border-radius: 0.5em;
+}
+
+#gallery h1,
+#gallery h2 {
+  color: #1a4d2e;
+}
+
+#gallery h1 {
+  font-size: 2em;
+}
+
+#video-section h2 {
+  color: #1a4d2e;
 }

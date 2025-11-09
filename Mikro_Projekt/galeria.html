@@ -5,10 +5,118 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>My Website</title>
     <link rel="stylesheet" href="./style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lobster+Two:ital,wght@0,400;0,700;1,400;1,700&family=Story+Script&display=swap"
+      rel="stylesheet"
+    />
   </head>
-  <body>
+  <body onload="runClock()">
     <main class="main-container">
-      <h1>Welcome to My Website</h1>
+      <nav>
+        <img
+          src="https://png.pngtree.com/png-vector/20220612/ourmid/pngtree-vector-black-and-white-compass-isolated-on-white-background-png-image_5010466.png"
+          alt="kompas"
+        />
+        <div id="clock"></div>
+        <h1>Odkryj Bieszczady</h1>
+        <ul class="nav-links">
+          <li><a href="home.html">Home</a></li>
+          <li><a href="galeria.html">Galeria</a></li>
+          <li><a href="kontakt.html">Kontakt</a></li>
+        </ul>
+      </nav>
+
+      <section id="gallery">
+        <h1>Galeria</h1>
+        <div class="gallery-section">
+          <h2>Miejsca</h2>
+          <button onclick="showHideImages('places-images')">Pokaż/Ukryj</button>
+          <div id="places-images" class="images">
+            <div class="img-info">
+              <img
+                class="gallery-img"
+                id="wet-img"
+                src="https://cdn.podroze.onet.pl/1/ZZak9lLaHR0cDovL29jZG4uZXUvaW1hZ2VzL3B1bHNjbXMvTnpBN01EQV8vMzAxMDhiZGFlZDJiOTVhYTBjOTAxMjU5OWViOTg4ZDQuanBnkpUDAG_NDhDNB-mTBc0JYM0E7N4AAqEwB6ExBA"
+                alt="Połonina Wetlińska"
+                title="Połonina Wetlińska"
+              />
+              <h3 class="info" id="wet-info">Połonina Wetlińska</h3>
+            </div>
+
+            <div class="img-info">
+              <img
+                class="gallery-img"
+                id="car-img"
+                src="https://www.gancarczyk.com/wp-content/uploads/2020/08/04-kruhly-wierch-01.jpg"
+                alt="Połonina Caryńska"
+                title="Połonina Caryńska"
+              />
+              <h3 class="info" id="car-info">Połonina Caryńska</h3>
+            </div>
+
+            <div class="img-info">
+              <img
+                class="gallery-img"
+                id="sol-img"
+                src="https://infoturystyka.pl/uploads/seeing/tok114548687874/1656423987.jpg"
+                alt="Jezioro Solińskie"
+                title="Jezioro Solińskie"
+              />
+              <h3 class="info" id="sol-info">Jezioro Solińskie</h3>
+            </div>
+            <div class="img-info">
+              <img
+                class="gallery-img"
+                id="tar-img"
+                src="https://static.korso.pl/galleries/3b29b981-d3de-4770-88ff-d25b0d72ade3"
+                alt="Szczyt Tarnicy"
+                title="Szczyt Tarnicy"
+              />
+              <h3 class="info" id="tar-info">Szczyt Tarnicy</h3>
+            </div>
+          </div>
+        </div>
+
+        <div class="gallery-section">
+          <h2>Zwierzęta</h2>
+          <button onclick="showHideImages('animals-images')">
+            Pokaż/Ukryj
+          </button>
+          <div id="animals-images" class="images">
+            <div class="img-info">
+              <img
+                class="gallery-img"
+                id="zub-img"
+                src="https://bieszczady.land/wp-content/uploads/2019/06/mlode-zubry-bieszczady-shutterstock_2097383650.jpeg"
+                alt="Żubry"
+                title="Żubry"
+              />
+              <h3 class="info" id="zub-info">Żubry</h3>
+            </div>
+
+            <div class="img-info">
+              <img
+                class="gallery-img"
+                id="rys-img"
+                src="https://bieszczady.land/wp-content/uploads/2015/05/rys-e_monk-cc-flickr.com-3066990314_f9fd867fd3_o-1200x900.jpg"
+                alt="Rysie"
+                title="Rysie"
+              />
+              <h3 class="info" id="rys-info">Rysie</h3>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="video-section">
+        <h2>Video z Bieszczad</h2>
+        <video controls>
+          <source src="assets/videos/12528016_1920_1080_60fps.mp4" />
+          Twoja przeglądarka nie obsluguje video.
+        </video>
+      </section>
+      <footer>Adam Nartowski</footer>
     </main>
     <script src="index.js"></script>
   </body>

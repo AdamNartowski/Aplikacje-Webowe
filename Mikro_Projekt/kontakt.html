@@ -5,10 +5,81 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>My Website</title>
     <link rel="stylesheet" href="./style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lobster+Two:ital,wght@0,400;0,700;1,400;1,700&family=Story+Script&display=swap"
+      rel="stylesheet"
+    />
   </head>
-  <body>
+  <body onload="runClock()">
     <main class="main-container">
-      <h1>Welcome to My Website</h1>
+      <nav>
+        <img
+          src="https://png.pngtree.com/png-vector/20220612/ourmid/pngtree-vector-black-and-white-compass-isolated-on-white-background-png-image_5010466.png"
+          alt="kompas"
+        />
+        <div id="clock"></div>
+        <h1>Odkryj Bieszczady</h1>
+        <ul class="nav-links">
+          <li><a href="home.html">Home</a></li>
+          <li><a href="galeria.html">Galeria</a></li>
+          <li><a href="kontakt.html">Kontakt</a></li>
+        </ul>
+      </nav>
+
+      <section id="form-section">
+        <form>
+          <h2>Skontaktuj się z nami</h2>
+          <label for="fname">Imię</label><br />
+          <input
+            type="text"
+            id="fname"
+            name="fname"
+            placeholder="Podaj swoje imię"
+          /><br />
+
+          <label for="lname">Nazwisko</label><br />
+          <input
+            type="text"
+            id="lname"
+            name="lname"
+            placeholder="Podaj swoje nazwisko"
+          /><br />
+
+          <label for="email">E-mail</label><br />
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="Podaj swój adres e-mail"
+            required
+          /><br />
+
+          <label for="subject">Temat wiadomości</label><br />
+          <select id="subject" name="subject" required>
+            <option value="" disabled selected hidden>-- wybierz --</option>
+            <option value="story">Twoja historia</option>
+            <option value="suggestion">Sugestia zmian na stronie</option>
+            <option value="question">Pytanie</option></select
+          ><br />
+
+          <label for="message">Wiadomość</label><br />
+          <textarea
+            id="message"
+            name="message"
+            rows="7"
+            cols="30"
+            placeholder="Wpisz swoją wiadomość"
+            required
+          ></textarea
+          ><br />
+
+          <button type="submit">Wyślij</button>
+        </form>
+      </section>
+
+      <footer>Adam Nartowski</footer>
     </main>
     <script src="index.js"></script>
   </body>
