@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Generator haseł</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <h1>Generator haseł</h1>
+    <form>
+      <label>Minimalna długość hasła: </label>
+      <input type="number" id="minLen" min="1" /><br />
+
+      <label>Maksymanlna długość hasła: </label>
+      <input type="number" id="maxLen" min="1" /><br />
+
+      <label>
+        <input type="checkbox" id="upper" /> Czy hasło ma zawierać wielkie
+        litery? </label
+      ><br />
+
+      <label>
+        <input type="checkbox" id="special" /> Czy hasło ma zawierać znaki
+        specjalne? </label
+      ><br />
+
+      <button onclick="generatePassword()">Wygeneruj hasło</button>
+    </form>
+    <script src="zad2.js"></script>
+  </body>
+</html>

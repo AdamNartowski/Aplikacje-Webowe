@@ -1,0 +1,99 @@
+html {
+  background-color: #f58b44;
+  height: 100vh;
+}
+
+body {
+  height: 100vh;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: "Monaco", monospace;
+}
+
+.main-container {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+input {
+  background-color: #f2d1bb;
+  border-radius: 10px;
+}
+
+#timer {
+  margin: 20px;
+  background-color: azure;
+  padding: 10px;
+  border-radius: 10px;
+  border: solid black 5px;
+  font-weight: bold;
+  font-size: 2rem;
+}
+
+h1 {
+  color: azure;
+  font-size: 2rem;
+}
+
+button {
+  border-radius: 10px;
+  border: solid black 2px;
+  background-color: azure;
+  color: black;
+  font-size: 1.2rem;
+}
+
+form {
+  background-color: #1dbaf4;
+  border: solid black 3px;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  font-size: 1, 2rem;
+  padding: 20px 30px;
+}
+
+table {
+  margin-top: 20px;
+  border-collapse: collapse;
+  max-width: 80%;
+}
+
+th,
+td {
+  border: 2px solid black;
+  padding: 8px;
+  vertical-align: top;
+}
+
+img {
+  width: 80px;
+  border-radius: 7px;
+}
+
+#controls {
+  display: flex;
+  gap: 10px;
+}
+
+#links {
+  border: 2px solid black;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 20px;
+  align-items: center;
+  gap: 10px;
+}
