@@ -1,0 +1,106 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+div {
+  padding: 15px;
+}
+
+table,
+th,
+td {
+  border: 2px solid white;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.komentarz {
+  border-radius: 0px 30px 0px 30px;
+
+  background-color: #182d2b;
+  border: 2px solid #68d391;
+
+  width: 300px;
+  margin: 20px auto;
+  text-align: left;
+
+  box-shadow: 4px 4px 0px rgba(104, 211, 145, 0.4);
+
+  padding: 20px !important;
+}
+
+.komentarzDol {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.9em;
+  font-weight: bold;
+}
+
+.komentzrzLike {
+  background-color: white;
+  border: 1px solid #68d391;
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+
+.komentarzLike:hover {
+  background-color: #c6f6d5;
+  transform: scale(1.1);
+}
+
+.komentarzeSiatka {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
